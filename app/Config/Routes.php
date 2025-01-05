@@ -16,4 +16,9 @@ $routes->group('admin', function($routes) {
     $routes->match(['GET', 'POST'], '/', 'admin\C_users::index');
     $routes->match(['GET', 'POST'], '(:segment)', 'admin\C_users::$1');
   });
+
+  $routes->group('datamaster', function($routes) {
+    $routes->match(['GET', 'POST'], '/', 'admin\C_datamaster::index');
+    $routes->match(['GET', 'POST'], '(:segment)', 'admin\C_datamaster::$1');
+  });
 });

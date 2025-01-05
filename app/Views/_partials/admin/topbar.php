@@ -21,7 +21,7 @@
             <a href="<?= base_url('admin/users') ?>" class="nav-link <?= $active = $is_active == 'users' ? 'active' : '' ?>">Pengguna</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Data Master</a>
+            <a href="<?= base_url('admin/datamaster') ?>" class="nav-link <?= $active = $is_active == 'datamaster' ? 'active' : '' ?>">Data Master</a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">Laporan</a>
