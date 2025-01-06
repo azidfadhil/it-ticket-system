@@ -13,7 +13,9 @@
                 <div class="col-12 mb-3">
                   <label for="eNamaKatTiket" class="form-label">Nama Kategori Tiket / <i>Ticket Category Name</i></label>
                   <input type="text" id="eNamaKatTiket" class="form-control" name="e_nama_kat_tiket" placeholder="Nama Kategori Tiket">
-                  <small class="form-text"><span class="text-muted">Cek data: </span></small>
+                  <small class="form-text">
+                    <span class="text-muted">Cek data: </span>
+                  </small>
                 </div>
               </div>
             </div>
@@ -24,7 +26,7 @@
             </div>
             <!-- /.card-footer -->
           </form>
-          <!-- /#formTambahPengguna -->
+          <!-- /#formTambahKategoriTiket -->
         </div>
       </div>
     </div>
