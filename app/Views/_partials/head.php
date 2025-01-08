@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="<?= base_url('plugins/fontawesome-free/css/all.min.css') ?>">
   <!-- Select2 -->
   <link rel="stylesheet" href="<?= base_url('plugins/select2/css/select2.min.css') ?>">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="../../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= base_url('dist/css/adminlte.css') ?>">
 </head>

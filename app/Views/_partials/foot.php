@@ -13,9 +13,12 @@
 <script src="<?= base_url('plugins/select2/js/select2.full.min.js') ?>"></script>
 <!-- ChartJS -->
 <script src="<?= base_url('plugins/chart.js/Chart.min.js') ?>"></script>
+<!-- SweetAlert2 -->
+<script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?= base_url('dist/js/adminlte.min.js') ?>"></script>
 <!-- Is Active Script -->
+<script>var baseUrl = '<?= base_url() ?>'</script>
 <?php if (isset($is_active)) : ?>
 <script src="<?= base_url('assets/js/script-admin-' . $is_active . '.js') ?>"></script>
 <?php endif ?>
