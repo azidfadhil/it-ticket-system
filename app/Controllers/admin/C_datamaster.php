@@ -34,6 +34,23 @@ class C_datamaster extends BaseController {
           .view('admin/datamaster/V_tambah_kat_tiket')
           .view('_partials/foot');
   }
+  public function changeStatusData() {
+    $id = $this->request->getVar('id');
+    $status = $this->request->getVar('status');
+
+    $result = $this->M_datamaster->updatedata('tm_kat_tiket', 'i_kat_tiket', $id, ['f_active' => $status]);
+    if (!$result) {
+      return $this->response->setJSON([
+        'status' => false,
+        'message' => 'Gagal mengupdate data.'
+      ]);
+    } else {
+      return $this->response->setJSON([
+        'status' => true,
+        'message' => 'Berhasil mengupdate data.'
+      ]);
+    }
+  }
   public function checkavailability() {
     $type = $this->request->getVar('type');
     $data = $this->request->getPost('data');
