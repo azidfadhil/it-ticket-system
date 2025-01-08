@@ -5,7 +5,7 @@
       <div class="col-12">
         <div class="card card-outline card-primary">
           <div class="card-header">
-            <h3 class="card-title">Tambah Pengguna</h3>
+            <h3 class="card-title">Tambah Requester</h3>
           </div>
           <form id="formTambahPengguna">
             <div class="card-body">
