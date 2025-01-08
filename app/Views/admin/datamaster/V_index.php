@@ -1,34 +1,28 @@
 <div class="content">
   <div class="container">
     <div class="row mb-3">
-      <div class="col-lg-3 col-md-12 mb-5">
-        <div class="row">
-          <div class="col-12">
-            <a href="<?= base_url('admin/datamaster/tambahkattiket') ?>" class="btn btn-sm btn-primary mb-2 w-100"><i class="fas fa-plus mr-2"></i> Tambah Kategori</a>
+      <div class="col-12">
+        <div class="card card-light card-tabs">
+          <div class="card-header p-0 pt-1 border-bottom-0">
+            <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
+              <li class="py-2 px-3"><h3 class="card-title">Data Master</h3></li>
+              <li class="nav-item">
+                <a class="nav-link active" id="kategori-tab" data-toggle="pill" href="#kategori" role="tab" aria-controls="kategori" aria-selected="true">Kategori</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="divisi-tab" data-toggle="pill" href="#divisi" role="tab" aria-controls="divisi" aria-selected="false">Divisi</a>
+              </li>
+            </ul>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <a href="#" class="btn btn-sm btn-success mb-2 w-100"><i class="fas fa-plus mr-2"></i> Tambah Divisi</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-9 col-md-12">
-        <div class="row">
-          <div class="col-12">
-            <div class="card card-primary collapsed-card">
-              <div class="card-header" data-card-widget="collapse" title="Collapse">
-                <h3 class="card-title">Daftar Kategori</h3>
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                    <i class="fas fa-plus"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="card-body p-0">
-                <div class="table-responsive p-0">
+          <!-- /.card-header -->
+          <div class="card-body p-0">
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="kategori" role="tabpanel" aria-labelledby="kategori-tab">
+                <a href="#" class="btn btn-sm btn-primary my-2 ml-2"><i class="fas fa-fw fa-plus mr-1"></i> Tambah Kategori</a>
+                <!-- Table Requester -->
+                <div class="table-responsive">
                   <table class="table table-hover mb-0 text-nowrap">
-                    <thead>
+                    <thead class="bg-primary">
                       <tr>
                         <th width="10">
                           ID<br>
@@ -54,28 +48,13 @@
                 </div>
                 <!-- /.responsive-table -->
               </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div> 
-          <!-- /.col -->
-        </div>
-        <!-- /.row -->
-        <div class="row">
-          <div class="col-12">
-            <div class="card card-success collapsed-card">
-              <div class="card-header" data-card-widget="collapse" title="Collapse">
-                <h3 class="card-title">Daftar Divisi</h3>
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                    <i class="fas fa-plus"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="card-body p-0">
-                <div class="table-responsive p-0">
+              <!-- /.tab-pane -->
+              <div class="tab-pane fade show" id="divisi" role="tabpanel" aria-labelledby="divisi-tab">
+                <a href="#" class="btn btn-sm btn-success my-2 ml-2"><i class="fas fa-fw fa-plus mr-1"></i> Tambah Divisi</a>
+                <!-- Table Requester -->
+                <div class="table-responsive">
                   <table class="table table-hover mb-0 text-nowrap">
-                    <thead>
+                    <thead class="bg-success">
                       <tr>
                         <th width="10">
                           ID<br>
@@ -113,14 +92,17 @@
                 </div>
                 <!-- /.responsive-table -->
               </div>
-              <!-- /.card-body -->
+              <!-- /.tab-pane -->
             </div>
-            <!-- /.card -->
-          </div> 
-          <!-- /.col -->
+            <!-- /.tab-content -->
+          </div>
+          <!-- /.card-body -->
         </div>
-        <!-- /.row -->
+        <!-- /.card -->
       </div>
+      <!-- /.col -->
     </div>
+    <!-- /.row -->
   </div>
+  <!-- /.container -->
 </div>
