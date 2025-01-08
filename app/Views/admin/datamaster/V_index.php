@@ -18,7 +18,7 @@
           <div class="card-body p-0">
             <div class="tab-content">
               <div class="tab-pane fade show active" id="kategori" role="tabpanel" aria-labelledby="kategori-tab">
-                <a href="#" class="btn btn-sm btn-primary my-2 ml-2"><i class="fas fa-fw fa-plus mr-1"></i> Tambah Kategori</a>
+                <a href="<?= base_url('admin/datamaster/tambahkattiket') ?>" class="btn btn-sm btn-primary my-2 ml-2"><i class="fas fa-fw fa-plus mr-1"></i> Tambah Kategori</a>
                 <!-- Table Requester -->
                 <div class="table-responsive">
                   <table class="table table-hover mb-0 text-nowrap">
@@ -35,14 +35,20 @@
                       </tr>
                     </thead>
                     <tbody>
+                      <?php foreach ($kategori_tiket as $row) : ?>
                       <tr>
-                        <td width="10">1</td>
-                        <td>Website</td>
+                        <td width="10"><?= $row->i_kat_tiket ?></td>
+                        <td><?= $row->e_nama_kat_tiket ?></td>
                         <td class="float-right">
+                          <?php if ($row->f_active) : ?>
                           <a href="#" class="btn btn-sm btn-danger"><i class="fas fa-fw fa-lock"></i></a>
+                          <?php else : ?>
+                          <a href="#" class="btn btn-sm btn-success"><i class="fas fa-fw fa-unlock"></i></a>
+                          <?php endif ?>
                           <a href="#" class="btn btn-sm btn-warning text-white"><i class="fas fa-fw fa-pencil-alt"></i></a>
                         </td>
                       </tr>
+                      <?php endforeach ?>
                     </tbody>
                   </table>
                 </div>
