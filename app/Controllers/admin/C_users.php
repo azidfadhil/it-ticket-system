@@ -16,26 +16,26 @@ class C_users extends BaseController {
           .view('admin/users/V_index')
           .view('_partials/foot');
   }
-  public function tambahuser() {
+  public function tambahrequester() {
     $data = [
-      'page_title' => 'Tambah Pengguna',
+      'page_title' => 'Tambah Requester',
       'is_active' => 'users',
     ];
 
     return view('_partials/head', $data)
           .view('_partials/admin/topbar') 
-          .view('admin/users/V_tambah_user')
+          .view('admin/users/V_tambah_requester')
           .view('_partials/foot');
   }
-  public function editpengguna() {
+  public function editrequester() {
     $data = [
-      'page_title' => 'Edit Pengguna',
+      'page_title' => 'Edit Requester',
       'is_active' => 'users',
     ];
 
     return view('_partials/head', $data)
           .view('_partials/admin/topbar') 
-          .view('admin/users/V_edit_user')
+          .view('admin/users/V_edit_requester')
           .view('_partials/foot');
   }
 }
