@@ -86,13 +86,8 @@
           <div class="overlay">
             <i class="fas fa-3x fa-sync-alt fa-spin"></i>
           </div>
-          <div class="card-header">
+          <div class="card-header" data-card-widget="collapse" title="Collapse">
             <h3 class="card-title">Tiket Per Kategori Bulan Ini</h3>
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                <i class="fas fa-minus"></i>
-              </button>
-            </div>
           </div>
           <div class="card-body p-2">
             <canvas id="tiketPerKategoriChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
@@ -104,13 +99,8 @@
           <div class="overlay">
             <i class="fas fa-3x fa-sync-alt fa-spin"></i>
           </div>
-          <div class="card-header">
+          <div class="card-header" data-card-widget="collapse" title="Collapse">
             <h3 class="card-title">Tiket Per Teknisi Bulan Ini</h3>
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                <i class="fas fa-minus"></i>
-              </button>
-            </div>
           </div>
           <div class="card-body p-2">
             <canvas id="tiketPerTeknisiChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
@@ -125,13 +115,8 @@
           <div class="overlay">
             <i class="fas fa-3x fa-sync-alt fa-spin"></i>
           </div>
-          <div class="card-header">
+          <div class="card-header" data-card-widget="collapse" title="Collapse">
             <h3 class="card-title">Tiket Terbaru</h3>
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                <i class="fas fa-minus"></i>
-              </button>
-            </div>
           </div>
           <div class="card-body p-0">
             <div class="table-responsive p-0" style="max-height: 400px">
