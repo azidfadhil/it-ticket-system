@@ -12,12 +12,20 @@ class M_all extends Model {
     $query = $this->db->table($table)->orderBy($column, $order)->get();
     return $query->getResult();
   }
+  public function getDataById($table, $column, $id) {
+    $query = $this->db->table($table)->where($column, $id)->get();
+    return $query->getRow();
+  }
   public function savedata($table, $data) {
     $query = $this->db->table($table)->insert($data);
     return $result = $query ? $this->db->insertID() : false;
   }
   public function updatedata($table, $column, $id, $data) {
     $query = $this->db->table($table)->where($column, $id)->update($data);
+    return $result = $query ? $id : false;
+  }
+  public function deletedata($table, $column, $id) {
+    $query = $this->db->table($table)->where($column, $id)->delete();
     return $query;
   }
   public function sendLog($data) {

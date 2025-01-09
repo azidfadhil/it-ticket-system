@@ -15,16 +15,16 @@
             </ul>
           </div>
           <!-- /.card-header -->
-          <div class="card-body p-0">
+          <div class="card-body px-0 pb-0 pt-2">
             <div class="tab-content">
               <div class="tab-pane fade show active" id="kategori" role="tabpanel" aria-labelledby="kategori-tab">
-                <a href="<?= base_url('admin/datamaster/tambahkattiket') ?>" class="btn btn-sm btn-primary mt-2 ml-2"><i class="fas fa-fw fa-plus mr-1"></i> Tambah Kategori</a>
+                <a href="<?= base_url('admin/datamaster/tambahkattiket') ?>" class="btn btn-sm btn-primary position-absolute ml-2" style="z-index: 99"><i class="fas fa-fw fa-plus mr-1"></i> Tambah Kategori</a>
                 <!-- Table Requester -->
                 <div class="table-responsive">
                   <table class="table table-hover mb-0 text-nowrap data-table">
                     <thead class="bg-primary">
                       <tr>
-                        <th width="10">
+                        <th class="text-right" width="20">
                           #<br>
                           <small><i>#</i></small></th>
                         </th>
@@ -39,16 +39,16 @@
                       $no = 1;
                       foreach ($kategori_tiket as $row) : ?>
                       <tr>
-                        <td width="10"><?= $no++ ?></td>
+                        <td class="text-right" width="20"><?= $no++ ?></td>
                         <td><?= $row->e_nama_kat_tiket ?></td>
                         <td>
                           <div class="float-right">
                             <?php if ($row->f_active) : ?>
-                            <a href="#" class="btn btn-sm btn-danger btn-lock" data-id="<?= $row->i_kat_tiket ?>" data-status="0"><i class="fas fa-fw fa-lock"></i></a>
+                            <a href="#" class="btn btn-sm btn-danger btn-lock" data-id="<?= $row->i_kat_tiket ?>" data-status="0" data-type="kategori_tiket"><i class="fas fa-fw fa-lock"></i></a>
                             <?php else : ?>
-                            <a href="#" class="btn btn-sm btn-success btn-lock" data-id="<?= $row->i_kat_tiket ?>" data-status="1"><i class="fas fa-fw fa-lock-open"></i></a>
+                            <a href="#" class="btn btn-sm btn-success btn-lock" data-id="<?= $row->i_kat_tiket ?>" data-status="1" data-type="kategori_tiket"><i class="fas fa-fw fa-lock-open"></i></a>
                             <?php endif ?>
-                            <a href="#" class="btn btn-sm btn-warning text-white"><i class="fas fa-fw fa-pencil-alt"></i></a>
+                            <a href="<?= base_url('admin/datamaster/editkattiket?id=' . $row->i_kat_tiket) ?>" class="btn btn-sm btn-warning text-white"><i class="fas fa-fw fa-pencil-alt"></i></a>
                           </div>
                         </td>
                       </tr>
@@ -60,15 +60,15 @@
               </div>
               <!-- /.tab-pane -->
               <div class="tab-pane fade show" id="divisi" role="tabpanel" aria-labelledby="divisi-tab">
-                <a href="#" class="btn btn-sm btn-success mt-2 ml-2"><i class="fas fa-fw fa-plus mr-1"></i> Tambah Divisi</a>
+                <a href="<?= base_url('admin/datamaster/tambahdivisi') ?>" class="btn btn-sm btn-success position-absolute ml-2" style="z-index: 99"><i class="fas fa-fw fa-plus mr-1"></i> Tambah Divisi</a>
                 <!-- Table Requester -->
                 <div class="table-responsive">
                   <table class="table table-hover mb-0 text-nowrap data-table">
                     <thead class="bg-success">
                       <tr>
-                        <th width="10">
-                          ID<br>
-                          <small><i>Id</i></small></th>
+                        <th class="text-right" width="20">
+                          #<br>
+                          <small><i>#</i></small></th>
                         </th>
                         <th class="text-nowrap" width="10">
                           Nama Divisi<br>
@@ -77,26 +77,24 @@
                       </tr>
                     </thead>
                     <tbody>
+                      <?php 
+                      $no = 1;
+                      foreach ($divisi as $row) : ?>
                       <tr>
-                        <td width="10">1</td>
-                        <td>IT</td>
+                        <td class="text-right" width="20"><?= $no++ ?></td>
+                        <td><?= $row->e_nama_divisi ?></td>
                         <td>
                           <div class="float-right">
-                            <a href="#" class="btn btn-sm btn-danger"><i class="fas fa-fw fa-lock"></i></a>
-                            <a href="#" class="btn btn-sm btn-warning text-white"><i class="fas fa-fw fa-pencil-alt"></i></a>
+                            <?php if ($row->f_active) : ?>
+                            <a href="#" class="btn btn-sm btn-danger btn-lock" data-id="<?= $row->i_divisi ?>" data-status="0" data-type="divisi"><i class="fas fa-fw fa-lock"></i></a>
+                            <?php else : ?>
+                            <a href="#" class="btn btn-sm btn-success btn-lock" data-id="<?= $row->i_divisi ?>" data-status="1" data-type="divisi"><i class="fas fa-fw fa-lock-open"></i></a>
+                            <?php endif ?>
+                            <a href="<?= base_url('admin/datamaster/editdivisi?id=' . $row->i_divisi) ?>" class="btn btn-sm btn-warning text-white"><i class="fas fa-fw fa-pencil-alt"></i></a>
                           </div>
                         </td>
                       </tr>
-                      <tr>
-                        <td width="10">1</td>
-                        <td>HRD</td>
-                        <td>
-                          <div class="float-right">
-                            <a href="#" class="btn btn-sm btn-danger"><i class="fas fa-fw fa-lock"></i></a>
-                            <a href="#" class="btn btn-sm btn-warning text-white"><i class="fas fa-fw fa-pencil-alt"></i></a>
-                          </div>
-                        </td>
-                      </tr>
+                      <?php endforeach ?>
                     </tbody>
                   </table>
                 </div>
