@@ -15,7 +15,7 @@ class C_datamaster extends BaseController {
     $data = [
       'page_title' => 'Data Master',
       'is_active' => 'datamaster',
-      'kategori_tiket' => $this->M_datamaster->getAllData('tm_kat_tiket'),
+      'kategori_tiket' => $this->M_all->getAllData('tm_kat_tiket', 'e_nama_kat_tiket', 'ASC'),
     ];
 
     return view('_partials/head', $data)
@@ -38,18 +38,7 @@ class C_datamaster extends BaseController {
     $id = $this->request->getVar('id');
     $status = $this->request->getVar('status');
 
-    $result = $this->M_datamaster->updatedata('tm_kat_tiket', 'i_kat_tiket', $id, ['f_active' => $status]);
-    if (!$result) {
-      return $this->response->setJSON([
-        'status' => false,
-        'message' => 'Gagal mengupdate data.'
-      ]);
-    } else {
-      return $this->response->setJSON([
-        'status' => true,
-        'message' => 'Berhasil mengupdate data.'
-      ]);
-    }
+    return $this->changeStatus($id, $status);
   }
   public function checkavailability() {
     $type = $this->request->getVar('type');
@@ -70,6 +59,25 @@ class C_datamaster extends BaseController {
   /**
    * Private Function
    */
+  private function changeStatus($id, $status) {
+    $result = $this->M_all->updatedata('tm_kat_tiket', 'i_kat_tiket', $id, ['f_active' => $status]);
+    if (!$result) {
+      return $this->response->setJSON([
+        'status' => false,
+        'message' => 'Gagal mengupdate data.'
+      ]);
+    } else {
+      $data_log = [
+        'e_ket_log' => 'Merubah status kategori tiket',
+        'i_data_log' => $id
+      ];
+      $this->M_all->sendLog($data_log);
+      return $this->response->setJSON([
+        'status' => true,
+        'message' => 'Berhasil mengupdate data.'
+      ]);
+    }
+  }
   private function checkKategoriTiket($data) {
     $result = $this->M_datamaster->checkavailability('tm_kat_tiket', 'e_nama_kat_tiket', $data);
     if ($result) {
@@ -85,10 +93,10 @@ class C_datamaster extends BaseController {
     }
   }
   private function saveKategoriTiket($data) {
-    $send = $this->M_datamaster->savedata('tm_kat_tiket', $data);
+    $send = $this->M_all->savedata('tm_kat_tiket', $data);
     if ($send) {
       $data_log = [
-        'e_ket_log' => 'Pembuatan Kategori Tiket Baru',
+        'e_ket_log' => 'Pembuatan kategori tiket baru',
         'i_data_log' => $send
       ];
       $this->M_all->sendLog($data_log);
